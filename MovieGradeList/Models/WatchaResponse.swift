@@ -13,11 +13,24 @@ struct WatchaResponse: Decodable {
 }
 
 struct Movie: Decodable {
-    var code: String
-    var title: String
-    var year: Int
-    var poster: String
-    var stillcut: String
-    var nation: String
-    var genre: String
+    private var code: String
+    private var title: String
+    private var year: Int
+    private var poster: String
+    private var stillcut: String
+    private var nation: String
+    private var genre: String
+    
+    var listModel: List? {
+        let description = "\(year) • \(nation)"
+        return List(title: title, posterURL: URL(string: poster), description: description)
+    }
+}
+
+extension Movie {
+    struct List {
+        var title: String
+        var posterURL: URL?
+        var description: String
+    }
 }
