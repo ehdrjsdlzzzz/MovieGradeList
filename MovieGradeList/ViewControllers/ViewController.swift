@@ -11,17 +11,32 @@ import UIKit
 class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var movies: [Movie] = []
+    private var movies: [Movie] = [] {
+        didSet {
+            collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
+        fetchMovies()
     }
     
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
         registerCell()
+    }
+    
+    private func fetchMovies() {
+        do {
+            movies = try Parser().parse(.file("contents.json")).data
+        }catch let error as Parser.ParseError {
+            print(error)
+        }catch {
+            print("unexpected Error")
+        }
     }
     
     private func registerCell() {
@@ -41,7 +56,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return movies.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -50,6 +65,9 @@ extension ViewController: UICollectionViewDataSource {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UICollectionViewCell.reuseIdentifier, for: indexPath)
             return cell
         }
+        
+        let listModel = movies[indexPath.item].listModel
+        cell.configure(listModel)
         return cell
     }
 }

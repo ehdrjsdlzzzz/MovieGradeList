@@ -18,4 +18,10 @@ class MovieCell: UICollectionViewCell {
         super.awakeFromNib()
         
     }
+    
+    func configure(_ movie: Movie.List?) {
+        guard let movie = movie else { return }
+        titleLabel.text = movie.title
+        descriptionLabel.text = movie.description
+    }
 }
