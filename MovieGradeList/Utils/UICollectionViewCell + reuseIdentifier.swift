@@ -6,7 +6,7 @@
 //  Copyright © 2019 이동건. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UICollectionViewCell {
     static var reuseIdentifier: String {
