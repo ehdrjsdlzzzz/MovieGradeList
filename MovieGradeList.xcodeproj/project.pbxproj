@@ -22,6 +22,8 @@
 		3E23964422706587003B9158 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E23964222706587003B9158 /* MovieCell.xib */; };
 		3E239649227069F5003B9158 /* UICollectionViewCell + reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E239648227069F5003B9158 /* UICollectionViewCell + reuseIdentifier.swift */; };
 		3E23964B22706F6B003B9158 /* StarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23964A22706F6B003B9158 /* StarService.swift */; };
+		3E23964E2270803A003B9158 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23964D2270803A003B9158 /* DetailViewController.swift */; };
+		3E23965022708043003B9158 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E23964F22708043003B9158 /* DetailViewController.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		3E23964222706587003B9158 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
 		3E239648227069F5003B9158 /* UICollectionViewCell + reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + reuseIdentifier.swift"; sourceTree = "<group>"; };
 		3E23964A22706F6B003B9158 /* StarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarService.swift; sourceTree = "<group>"; };
+		3E23964D2270803A003B9158 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		3E23964F22708043003B9158 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +171,8 @@
 			children = (
 				3E239605227057C4003B9158 /* ViewController.swift */,
 				3E239607227057C4003B9158 /* Main.storyboard */,
+				3E23964D2270803A003B9158 /* DetailViewController.swift */,
+				3E23964F22708043003B9158 /* DetailViewController.storyboard */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -329,6 +335,7 @@
 				3E23960B227057C5003B9158 /* Assets.xcassets in Resources */,
 				3E239609227057C4003B9158 /* Main.storyboard in Resources */,
 				3E239635227058EF003B9158 /* contents.json in Resources */,
+				3E23965022708043003B9158 /* DetailViewController.storyboard in Resources */,
 				3E23964422706587003B9158 /* MovieCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +361,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E23964E2270803A003B9158 /* DetailViewController.swift in Sources */,
 				3E239606227057C4003B9158 /* ViewController.swift in Sources */,
 				3E23963B2270638A003B9158 /* ContentType.swift in Sources */,
 				3E239649227069F5003B9158 /* UICollectionViewCell + reuseIdentifier.swift in Sources */,
