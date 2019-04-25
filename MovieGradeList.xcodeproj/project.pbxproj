@@ -125,7 +125,7 @@
 		3E239602227057C4003B9158 /* MovieGradeList */ = {
 			isa = PBXGroup;
 			children = (
-				3E23964522706594003B9158 /* Utils */,
+				3E23964522706594003B9158 /* Extensions */,
 				3E23963F22706567003B9158 /* Views */,
 				3E23963C227063F9003B9158 /* Service */,
 				3E23963922706374003B9158 /* Constatns */,
@@ -231,12 +231,12 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
-		3E23964522706594003B9158 /* Utils */ = {
+		3E23964522706594003B9158 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				3E239648227069F5003B9158 /* NSObject + reuseIdentifier.swift */,
 			);
-			path = Utils;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
