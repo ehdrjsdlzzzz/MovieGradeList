@@ -13,15 +13,25 @@ class MovieCell: UICollectionViewCell {
     @IBOutlet weak var posterImageView: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var starRatingView: StarRatingView!
+    
+    private var movie: Movie.List?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        starRatingView.dataSource = self
     }
     
     func configure(_ movie: Movie.List?) {
-        guard let movie = movie else { return }
-        titleLabel.text = movie.title
-        descriptionLabel.text = movie.description
+        self.movie = movie
+        titleLabel.text = movie?.title
+        descriptionLabel.text = movie?.description
+        starRatingView.layoutIfNeeded()
+    }
+}
+
+extension MovieCell: StarRatingViewDataSource {
+    func ratings() -> Double? {
+        return movie?.rating
     }
 }
