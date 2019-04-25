@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum ContentType {
+enum ContentRepositoryType {
     case file(_ name: String)
     case url(_ rawURL: String)
     

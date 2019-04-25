@@ -9,11 +9,11 @@
 import Foundation
 
 protocol ParseSerive {
-    func parse(_ contentType: ContentType) throws -> WatchaResponse
+    func parse(_ contentType: ContentRepositoryType) throws -> WatchaResponse
 }
 
 class Parser: ParseSerive {
-    func parse(_ contentType: ContentType) throws -> WatchaResponse {
+    func parse(_ contentType: ContentRepositoryType) throws -> WatchaResponse {
         guard let url = contentType.path else { throw ParseError.invalidPath }
         let data = try readData(from: url)
         let response = try decode(data)
