@@ -28,6 +28,7 @@
 		3E239655227081AD003B9158 /* StarRatingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E239654227081AD003B9158 /* StarRatingView.xib */; };
 		3E239657227203DE003B9158 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E239656227203DE003B9158 /* ImageCacheService.swift */; };
 		3E23965B22720D06003B9158 /* CachableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23965A22720D06003B9158 /* CachableImageView.swift */; };
+		3E23965D22721187003B9158 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23965C22721187003B9158 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,7 @@
 		3E239654227081AD003B9158 /* StarRatingView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StarRatingView.xib; sourceTree = "<group>"; };
 		3E239656227203DE003B9158 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		3E23965A22720D06003B9158 /* CachableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachableImageView.swift; sourceTree = "<group>"; };
+		3E23965C22721187003B9158 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				3E23963722705A1F003B9158 /* WatchaResponse.swift */,
+				3E23965C22721187003B9158 /* Movie.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				3E23964322706587003B9158 /* MovieCell.swift in Sources */,
 				3E23964B22706F6B003B9158 /* StarService.swift in Sources */,
 				3E23963E22706401003B9158 /* Parser.swift in Sources */,
+				3E23965D22721187003B9158 /* Movie.swift in Sources */,
 				3E23963822705A1F003B9158 /* WatchaResponse.swift in Sources */,
 				3E239604227057C4003B9158 /* AppDelegate.swift in Sources */,
 				3E239657227203DE003B9158 /* ImageCacheService.swift in Sources */,
