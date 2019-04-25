@@ -80,3 +80,18 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
+extension ViewController: MovieDetailViewDataSource {
+    func movieDetail() -> Movie.Detail? {
+        guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else { return nil }
+        return movies[selectedIndexPath.item].detailType
+    }
+}
+
+extension ViewController: MovieDetailViewDelegate {
+    func movieDetailView(_ movieDetailView: DetailViewController, ratingDidChanged: Double) {
+        guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else { return }
+        movies[selectedIndexPath.item].updateRating(ratingDidChanged)
+        collectionView.reloadItems(at: [selectedIndexPath])
+    }
+}
+
