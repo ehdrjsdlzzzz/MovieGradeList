@@ -28,11 +28,21 @@ struct StarService {
     }
     
     private func makeHalfStar(_ decimalPoint: Double) -> UIImage {
-        let shouldMakeHalfStar = decimalPoint >= 0.5
-        return shouldMakeHalfStar ? StarType.half.image : StarType.empty.image
+        guard decimalPoint != 0 else { return StarType.empty.image }
+        
+        if decimalPoint > 0.2 && decimalPoint <= 0.5 {
+            return StarType.half.image
+        }
+        
+        if decimalPoint > 0.5 {
+            return StarType.full.image
+        }
+        
+        return StarType.empty.image
     }
     
     private func makeEmptyStar(_ count: Int) -> [UIImage] {
+        guard count >= 0 else { return [] }
         return Array(repeating: StarType.empty.image, count: count).compactMap { $0 }
     }
 }
