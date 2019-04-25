@@ -52,6 +52,14 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: 120)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: DetailViewController.reuseIdentifier, bundle: nil)
+        guard let detailViewController = storyboard.instantiateViewController(withIdentifier: DetailViewController.reuseIdentifier) as? DetailViewController else { return }
+        detailViewController.dataSource = self
+        detailViewController.delegate = self
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
 }
 
 extension ViewController: UICollectionViewDataSource {
