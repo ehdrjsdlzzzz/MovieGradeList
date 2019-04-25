@@ -74,7 +74,7 @@ extension ViewController: UICollectionViewDataSource {
             return cell
         }
         
-        let listModel = movies[indexPath.item].listModel
+        let listModel = movies[indexPath.item].listType
         cell.configure(listModel)
         return cell
     }
