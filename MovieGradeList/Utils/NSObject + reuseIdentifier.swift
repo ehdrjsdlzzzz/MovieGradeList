@@ -6,9 +6,9 @@
 //  Copyright © 2019 이동건. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-extension UICollectionViewCell {
+extension NSObject {
     static var reuseIdentifier: String {
         return String(describing: self)
     }

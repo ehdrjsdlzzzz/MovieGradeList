@@ -20,7 +20,7 @@
 		3E23963E22706401003B9158 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23963D22706401003B9158 /* Parser.swift */; };
 		3E23964322706587003B9158 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23964122706587003B9158 /* MovieCell.swift */; };
 		3E23964422706587003B9158 /* MovieCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3E23964222706587003B9158 /* MovieCell.xib */; };
-		3E239649227069F5003B9158 /* UICollectionViewCell + reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E239648227069F5003B9158 /* UICollectionViewCell + reuseIdentifier.swift */; };
+		3E239649227069F5003B9158 /* NSObject + reuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E239648227069F5003B9158 /* NSObject + reuseIdentifier.swift */; };
 		3E23964B22706F6B003B9158 /* StarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23964A22706F6B003B9158 /* StarService.swift */; };
 		3E23964E2270803A003B9158 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23964D2270803A003B9158 /* DetailViewController.swift */; };
 		3E23965022708043003B9158 /* DetailViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3E23964F22708043003B9158 /* DetailViewController.storyboard */; };
@@ -65,7 +65,7 @@
 		3E23963D22706401003B9158 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		3E23964122706587003B9158 /* MovieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		3E23964222706587003B9158 /* MovieCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieCell.xib; sourceTree = "<group>"; };
-		3E239648227069F5003B9158 /* UICollectionViewCell + reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionViewCell + reuseIdentifier.swift"; sourceTree = "<group>"; };
+		3E239648227069F5003B9158 /* NSObject + reuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject + reuseIdentifier.swift"; sourceTree = "<group>"; };
 		3E23964A22706F6B003B9158 /* StarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarService.swift; sourceTree = "<group>"; };
 		3E23964D2270803A003B9158 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		3E23964F22708043003B9158 /* DetailViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailViewController.storyboard; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 		3E23964522706594003B9158 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				3E239648227069F5003B9158 /* UICollectionViewCell + reuseIdentifier.swift */,
+				3E239648227069F5003B9158 /* NSObject + reuseIdentifier.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -372,7 +372,7 @@
 				3E239606227057C4003B9158 /* ViewController.swift in Sources */,
 				3E23963B2270638A003B9158 /* ContentType.swift in Sources */,
 				3E239653227081A4003B9158 /* StarRatingView.swift in Sources */,
-				3E239649227069F5003B9158 /* UICollectionViewCell + reuseIdentifier.swift in Sources */,
+				3E239649227069F5003B9158 /* NSObject + reuseIdentifier.swift in Sources */,
 				3E23964322706587003B9158 /* MovieCell.swift in Sources */,
 				3E23964B22706F6B003B9158 /* StarService.swift in Sources */,
 				3E23963E22706401003B9158 /* Parser.swift in Sources */,
