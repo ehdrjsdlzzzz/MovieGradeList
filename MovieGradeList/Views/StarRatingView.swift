@@ -81,6 +81,7 @@ extension StarRatingView {
     @objc func handleTapRating(_ gesture: UITapGestureRecognizer) {
         let location = gesture.location(in: self)
         calculateRating(from: location)
+        delegate?.starRatingView(self, ratingDidChanged: rating)
     }
     
     @objc func handlePanRating(_ gesture: UIPanGestureRecognizer) {
@@ -88,6 +89,8 @@ extension StarRatingView {
         case .changed:
             let location = gesture.location(in: self)
             calculateRating(from: location)
+        case .ended:
+            delegate?.starRatingView(self, ratingDidChanged: rating)
         default:
             return
         }
