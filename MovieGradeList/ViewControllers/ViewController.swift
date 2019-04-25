@@ -13,20 +13,21 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK:- Properties
-    private var movies: [Movie] = [] {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
+    private var presenter = MainViewPresenter(parser: Parser())
     
     // MARK:- Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupCollectionView()
-        fetchMovies()
+        setupPresenter()
     }
     
     // MARK:- Setup
+    private func setupPresenter() {
+        presenter.attatchView(self)
+        presenter.fetchMovies()
+    }
+    
     private func setupCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -40,16 +41,17 @@ class ViewController: UIViewController {
     private func registerDefaultCell() {
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: UICollectionViewCell.reuseIdentifier)
     }
+}
+
+extension ViewController: MainViewType {
+    func reloadMovieCollectionView() {
+        collectionView.reloadData()
+    }
     
-    // MARK:- Fetch
-    private func fetchMovies() {
-        do {
-            movies = try Parser().parse(.file("contents.json")).data
-        }catch let error as Parser.ParseError {
-            print(error)
-        }catch {
-            print("unexpected Error")
-        }
+    func showError(_ error: Error) {
+        let alert = UIAlertController(title: "ERROR", message: error.localizedDescription, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -71,7 +73,7 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
 // MARK:- UICollectionViewDataSource
 extension ViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return movies.count
+        return presenter.moviesCount
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -81,7 +83,7 @@ extension ViewController: UICollectionViewDataSource {
             return cell
         }
         
-        let listModel = movies[indexPath.item].listType
+        let listModel = presenter.movie(at: indexPath.item).listType
         cell.configure(listModel)
         return cell
     }
@@ -91,7 +93,7 @@ extension ViewController: UICollectionViewDataSource {
 extension ViewController: MovieDetailViewDataSource {
     func movieDetail() -> Movie.Detail? {
         guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else { return nil }
-        return movies[selectedIndexPath.item].detailType
+        return presenter.movie(at: selectedIndexPath.item).detailType
     }
 }
 
@@ -99,8 +101,7 @@ extension ViewController: MovieDetailViewDataSource {
 extension ViewController: MovieDetailViewDelegate {
     func movieDetailView(_ movieDetailView: DetailViewController, ratingDidChanged: Double) {
         guard let selectedIndexPath = collectionView.indexPathsForSelectedItems?.first else { return }
-        movies[selectedIndexPath.item].updateRating(ratingDidChanged)
-        collectionView.reloadItems(at: [selectedIndexPath])
+        presenter.upgrade(rating: ratingDidChanged, at: selectedIndexPath.item)
     }
 }
 

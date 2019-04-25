@@ -29,6 +29,7 @@
 		3E239657227203DE003B9158 /* ImageCacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E239656227203DE003B9158 /* ImageCacheService.swift */; };
 		3E23965B22720D06003B9158 /* CachableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23965A22720D06003B9158 /* CachableImageView.swift */; };
 		3E23965D22721187003B9158 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23965C22721187003B9158 /* Movie.swift */; };
+		3E239660227221A3003B9158 /* MainViewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E23965F227221A3003B9158 /* MainViewPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		3E239656227203DE003B9158 /* ImageCacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheService.swift; sourceTree = "<group>"; };
 		3E23965A22720D06003B9158 /* CachableImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachableImageView.swift; sourceTree = "<group>"; };
 		3E23965C22721187003B9158 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		3E23965F227221A3003B9158 /* MainViewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				3E239605227057C4003B9158 /* ViewController.swift */,
+				3E23965F227221A3003B9158 /* MainViewPresenter.swift */,
 				3E239607227057C4003B9158 /* Main.storyboard */,
 				3E23964D2270803A003B9158 /* DetailViewController.swift */,
 				3E23964F22708043003B9158 /* DetailViewController.storyboard */,
@@ -379,6 +382,7 @@
 			files = (
 				3E23964E2270803A003B9158 /* DetailViewController.swift in Sources */,
 				3E239606227057C4003B9158 /* ViewController.swift in Sources */,
+				3E239660227221A3003B9158 /* MainViewPresenter.swift in Sources */,
 				3E23963B2270638A003B9158 /* ContentRepositoryType.swift in Sources */,
 				3E239653227081A4003B9158 /* StarRatingView.swift in Sources */,
 				3E239649227069F5003B9158 /* NSObject + reuseIdentifier.swift in Sources */,
