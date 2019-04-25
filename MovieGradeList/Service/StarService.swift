@@ -17,7 +17,7 @@ struct StarService {
     
     private func calculateStars(_ digit: Int, _ decimalPoint: Double) -> [UIImage] {
         var stars = makeFullStars(digit)
-        stars.append(makeHalfStar(decimalPoint))
+        stars.append(makeStar(decimalPoint))
         let emptyStarsCount = 5 - stars.count
         stars += makeEmptyStar(emptyStarsCount)
         return stars
@@ -27,7 +27,7 @@ struct StarService {
         return Array(repeating: StarType.full.image, count: count).compactMap { $0 }
     }
     
-    private func makeHalfStar(_ decimalPoint: Double) -> UIImage {
+    private func makeStar(_ decimalPoint: Double) -> UIImage {
         guard decimalPoint != 0 else { return StarType.empty.image }
         
         if decimalPoint > 0.2 && decimalPoint <= 0.5 {
