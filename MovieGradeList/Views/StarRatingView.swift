@@ -8,14 +8,47 @@
 
 import UIKit
 
+protocol StarRatingViewDataSource: class {
+    func starImages() -> [UIImage]
+}
+
+protocol StarRatingViewDelegate: class {
+    func starRatingView(_ starRatingView: StarRatingView, ratingDidChanged: Double)
+}
+
 class StarRatingView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+    weak var delegate: StarRatingViewDelegate?
+    weak var dataSource: StarRatingViewDataSource?
+    
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var imagesStackView: UIStackView!
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        baseInit()
     }
-    */
-
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        baseInit()
+    }
+    
+    private func baseInit() {
+        Bundle.main.loadNibNamed("StarRatingView", owner: self, options: nil)
+        addSubview(contentView)
+        contentView.frame = bounds
+    }
+    
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        fillStars()
+    }
+    
+    private func fillStars() {
+        guard let starImages = dataSource?.starImages() else { return }
+        let starImageViews = imagesStackView.subviews.compactMap { $0 as? UIImageView }
+        for (image, imageView) in zip(starImages, starImageViews) {
+            imageView.image = image
+        }
+    }
 }
