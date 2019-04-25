@@ -46,7 +46,11 @@ class StarRatingView: UIView {
     private func baseInit() {
         Bundle.main.loadNibNamed("StarRatingView", owner: self, options: nil)
         addSubview(contentView)
-        contentView.frame = bounds
+        contentView.translatesAutoresizingMaskIntoConstraints = false
+        contentView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
+        contentView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
+        contentView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        contentView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
     }
     
     override func layoutIfNeeded() {
