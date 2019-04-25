@@ -23,7 +23,7 @@ class CachableImageView: UIImageView {
         
         URLSession.shared.dataTask(with: url) { (data, response, err) in
             if let err = err {
-                print("Failed to fetch post image:", err)
+                print("Failed to fetch photo", err)
                 return
             }
             
