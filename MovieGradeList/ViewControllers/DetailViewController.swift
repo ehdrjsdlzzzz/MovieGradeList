@@ -17,9 +17,7 @@ protocol MovieDetailViewDelegate: class {
 }
 
 class DetailViewController: UIViewController {
-    weak var dataSource: MovieDetailViewDataSource?
-    weak var delegate: MovieDetailViewDelegate?
-    
+    // MARK:- Outlets
     @IBOutlet weak var posterImageView: CachableImageView!
     @IBOutlet weak var stillcutImageView: CachableImageView!
     @IBOutlet weak var ratingInfoLabel: UILabel!
@@ -27,8 +25,12 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var starRatingView: StarRatingView!
     
+    // MARK:- Propertes
+    weak var dataSource: MovieDetailViewDataSource?
+    weak var delegate: MovieDetailViewDelegate?
     private var movie: Movie.Detail?
     
+    // MARK:- Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupStarRatingView()
@@ -39,6 +41,7 @@ class DetailViewController: UIViewController {
         configure()
     }
     
+    // MARK:- Setup
     private func configure() {
         movie = dataSource?.movieDetail()
         titleLabel.text = movie?.title
@@ -54,6 +57,7 @@ class DetailViewController: UIViewController {
         starRatingView.enablePanGesture()
     }
     
+    // MARK:- Fetch
     private func fetchImages() {
         if let stillcutURL = movie?.stillcutURL {
             stillcutImageView.loadImage(urlString: stillcutURL.absoluteString)
@@ -64,12 +68,14 @@ class DetailViewController: UIViewController {
     }
 }
 
+// MARK:- StarRatingViewDelegate
 extension DetailViewController: StarRatingViewDelegate {
     func starRatingView(_ starRatingView: StarRatingView, ratingDidChanged: Double) {
         delegate?.movieDetailView(self, ratingDidChanged: ratingDidChanged)
     }
 }
 
+// MARK:- StarRatingViewDataSource
 extension DetailViewController: StarRatingViewDataSource {
     func ratings() -> Double? {
         return movie?.rating
