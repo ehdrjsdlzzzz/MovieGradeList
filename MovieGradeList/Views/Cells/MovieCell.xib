@@ -19,7 +19,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="308" height="121"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uzg-UK-8Z7">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uzg-UK-8Z7" customClass="CachableImageView" customModule="MovieGradeList" customModuleProvider="target">
                         <rect key="frame" x="8" y="18" width="57" height="85"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Uzg-UK-8Z7" secondAttribute="height" multiplier="60:89" id="arD-3m-gDW"/>

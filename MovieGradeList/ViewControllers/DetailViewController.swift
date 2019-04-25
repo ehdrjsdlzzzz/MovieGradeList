@@ -20,8 +20,8 @@ class DetailViewController: UIViewController {
     weak var dataSource: MovieDetailViewDataSource?
     weak var delegate: MovieDetailViewDelegate?
     
-    @IBOutlet weak var posterImageView: UIImageView!
-    @IBOutlet weak var stillcutImageView: UIImageView!
+    @IBOutlet weak var posterImageView: CachableImageView!
+    @IBOutlet weak var stillcutImageView: CachableImageView!
     @IBOutlet weak var ratingInfoLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -31,8 +31,7 @@ class DetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        starRatingView.dataSource = self
-        starRatingView.delegate = self
+        setupStarRatingView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,9 +43,24 @@ class DetailViewController: UIViewController {
         movie = dataSource?.movieDetail()
         titleLabel.text = movie?.title
         descriptionLabel.text = movie?.description
+        fetchImages()
+        starRatingView.layoutIfNeeded()
+    }
+    
+    private func setupStarRatingView() {
+        starRatingView.dataSource = self
+        starRatingView.delegate = self
         starRatingView.enableTapGesture()
         starRatingView.enablePanGesture()
-        starRatingView.layoutIfNeeded()
+    }
+    
+    private func fetchImages() {
+        if let stillcutURL = movie?.stillcutURL {
+            stillcutImageView.loadImage(urlString: stillcutURL.absoluteString)
+        }
+        if let posterURL = movie?.posterURL {
+            posterImageView.loadImage(urlString: posterURL.absoluteString)
+        }
     }
 }
 

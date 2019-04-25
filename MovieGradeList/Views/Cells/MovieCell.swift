@@ -10,7 +10,7 @@ import UIKit
 
 class MovieCell: UICollectionViewCell {
 
-    @IBOutlet weak var posterImageView: UIImageView!
+    @IBOutlet weak var posterImageView: CachableImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var starRatingView: StarRatingView!
@@ -26,7 +26,13 @@ class MovieCell: UICollectionViewCell {
         self.movie = movie
         titleLabel.text = movie?.title
         descriptionLabel.text = movie?.description
+        fetchImage()
         starRatingView.layoutIfNeeded()
+    }
+    
+    private func fetchImage() {
+        guard let posterURL = movie?.posterURL else { return }
+        posterImageView.loadImage(urlString: posterURL.absoluteString)
     }
 }
 
