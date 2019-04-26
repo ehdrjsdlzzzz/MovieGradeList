@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieCell" customModule="MovieGradeList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="308" height="121"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="308" height="121"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uzg-UK-8Z7" customClass="CachableImageView" customModule="MovieGradeList" customModuleProvider="target">
+                        <rect key="frame" x="8" y="18" width="57" height="85"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Uzg-UK-8Z7" secondAttribute="height" multiplier="60:89" id="arD-3m-gDW"/>
+                        </constraints>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WPo-f9-aTW">
+                        <rect key="frame" x="20" y="120" width="268" height="1"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="8MZ-Lk-3TN"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="a6a-VY-49L">
+                        <rect key="frame" x="73" y="18" width="215" height="85"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="영화 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="517-7e-fE1">
+                                <rect key="frame" x="0.0" y="0.0" width="63.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="영화 정보" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A6I-X6-PGf">
+                                <rect key="frame" x="0.0" y="24.5" width="56" height="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="om4-jM-s2w" customClass="StarRatingView" customModule="MovieGradeList" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="42.5" width="215" height="42.5"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="om4-jM-s2w" firstAttribute="width" secondItem="a6a-VY-49L" secondAttribute="width" id="Df5-mD-aCv"/>
+                            <constraint firstItem="om4-jM-s2w" firstAttribute="height" secondItem="a6a-VY-49L" secondAttribute="height" multiplier="0.5" id="umf-PS-rmT"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="WPo-f9-aTW" secondAttribute="bottom" id="AOe-bi-WT1"/>
+                <constraint firstItem="a6a-VY-49L" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="DrX-tl-AWn"/>
+                <constraint firstItem="a6a-VY-49L" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.7" id="WTk-zK-7FX"/>
+                <constraint firstItem="Uzg-UK-8Z7" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.7" id="a1x-OH-5M8"/>
+                <constraint firstItem="Uzg-UK-8Z7" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="cMf-bb-2IQ"/>
+                <constraint firstItem="Uzg-UK-8Z7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="fOu-Mg-PxL"/>
+                <constraint firstItem="Uzg-UK-8Z7" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="fZJ-VX-8Iv"/>
+                <constraint firstAttribute="trailing" secondItem="WPo-f9-aTW" secondAttribute="trailing" constant="20" id="qHf-6m-Buu"/>
+                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="a6a-VY-49L" secondAttribute="trailing" constant="20" id="vnt-2Y-aeL"/>
+                <constraint firstItem="a6a-VY-49L" firstAttribute="leading" secondItem="Uzg-UK-8Z7" secondAttribute="trailing" constant="8" id="wuE-Q6-F26"/>
+                <constraint firstItem="WPo-f9-aTW" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="xzl-yT-vrj"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="308" height="316"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="A6I-X6-PGf" id="NXp-y4-r9I"/>
+                <outlet property="posterImageView" destination="Uzg-UK-8Z7" id="6jv-er-bSV"/>
+                <outlet property="starRatingView" destination="om4-jM-s2w" id="msx-5u-ZZg"/>
+                <outlet property="titleLabel" destination="517-7e-fE1" id="HHW-5N-5nS"/>
+            </connections>
+            <point key="canvasLocation" x="36.799999999999997" y="85.007496251874073"/>
+        </collectionViewCell>
+    </objects>
+</document>

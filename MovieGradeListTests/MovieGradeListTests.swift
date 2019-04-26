@@ -19,9 +19,28 @@ class MovieGradeListTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testValidLocalRepository() {
+        XCTAssertNotNil(ContentRepositoryType.file("contents.json").path)
+    }
+    
+    func testInvalidLocalRepository() {
+        XCTAssertNotNil(ContentRepositoryType.file("contents.jon").path)
+    }
+    
+    func testValidRemoteRepostiory() {
+        XCTAssertNotNil(ContentRepositoryType.url("https://www.google.com").path)
+    }
+    
+    func testInvalidRemoteRepostiory() {
+        XCTAssertNotNil(ContentRepositoryType.url("https://wwww.google.coㅡ").path)
+    }
+    
+    func testParserWithInvalidLocalRepository() {
+        XCTAssertThrowsError(try Parser().parse(.file("contents.jon")))
+    }
+    
+    func testParserWithInvalidRemoteRepository() {
+        XCTAssertThrowsError(try Parser().parse(.file("https://wwww.google.coㅡ")))
     }
 
     func testPerformanceExample() {
